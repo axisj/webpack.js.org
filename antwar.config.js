@@ -10,7 +10,7 @@ module.exports = {
     description: 'webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.',
     file: path.join(__dirname, 'template.ejs')
   },
-  output: 'build',
+  output: 'docs',
   title: 'webpack',
   keywords: ['webpack', 'javascript', 'web development', 'programming'],
   pageTitle: function(config, pageTitle) {

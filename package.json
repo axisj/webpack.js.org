@@ -25,19 +25,19 @@
   },
   "scripts": {
     "start": "npm run init:generated && npm run fetch && node ./bootstrap.js",
-    "build": "npm run init:generated && npm run fetch && rm -rf build/ && node ./bootstrap.js && npm run sitemap && echo webpack.js.org > build/CNAME",
-    "build-test": "npm run build && http-server build/",
-    "deploy": "gh-pages -d build",
+    "build": "npm run init:generated && npm run fetch && rm -rf docs/ && node ./bootstrap.js && npm run sitemap && echo webpack.axisj.com > docs/CNAME",
+    "build-test": "npm run build && http-server docs/",
+    "deploy": "gh-pages -d docs",
     "fetch": "scripts/fetch.sh",
     "init:generated": "mkdirp ./generated/loaders && mkdirp ./generated/plugins ",
     "lint": "run-s lint:*",
-    "lint:links": "hyperlink -r build/index.html --canonicalroot https://webpack.js.org/ | ./scripts/check-links.js",
+    "lint:links": "hyperlink -r docs/index.html --canonicalroot https://webpack.axisj.com/ | ./scripts/check-links.js",
     "lint:js": "eslint . --ext .js --ext .jsx",
     "lint:markdown": "markdownlint --config ./.markdownlint.json *.md ./content/**/*.md",
     "lint:social": "alex ./**/*.md",
     "lint:prose": "cp .proselintrc ~/ && proselint content",
     "test": "npm run lint",
-    "sitemap": "cd build && sitemap-static --prefix=https://webpack.js.org/ > sitemap.xml"
+    "sitemap": "cd docs && sitemap-static --prefix=https://webpack.axisj.com/ > sitemap.xml"
   },
   "devDependencies": {
     "alex": "^3.1.0",
